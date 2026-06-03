@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas - Iniciar Sesión</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ajuste para que ocupe todo el alto de la pantalla sin scroll */
+        body, html {
+            height: 100%;
+        }
+        .full-height {
+            min-height: 100vh;
+        }
+        /* Fondo degradado sutil para el lado izquierdo */
+        .welcome-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid m-0 p-0">
+    <div class="row g-0 full-height">
+
+        <!-- SECCIÓN IZQUIERDA: PRESENTACIÓN -->
+        <div class="col-lg-7 d-none d-lg-flex flex-column justify-content-center align-items-center text-white welcome-section p-5">
+            <div class="text-center style-container" style="max-width: 550px;">
+                <!-- Icono ilustrativo (puedes cambiarlo por un SVG o imagen) -->
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-check2-square text-info" viewBox="0 0 16 16">
+                        <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1 1.5z"/>
+                        <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/>
+                    </svg>
+                </div>
+                <h1 class="display-4 fw-bold mb-3">Bienvenido a tu gestor de tareas</h1>
+                <p class="lead text-light-50">Crea, organiza y cumple tus objetivos de manera eficiente y sin complicaciones día a día.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN DERECHA: FORMULARIO DE LOGIN -->
+        <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center bg-light p-4 p-md-5">
+            <div class="w-100" style="max-width: 400px;">
+
+                <!-- Encabezado visible en móviles si la sección izquierda se oculta -->
+                <div class="text-center d-lg-none mb-4">
+                    <h2 class="fw-bold text-primary">Gestor de Tareas</h2>
+                    <p class="text-muted">Crea, organiza y cumple tus objetivos</p>
+                </div>
+
+                <div class="card border-0 shadow-sm p-4 rounded-3 bg-white">
+                    <div class="mb-4">
+                        <h3 class="fw-bold text-dark mb-1">Iniciar Sesión</h3>
+                        <p class="text-muted small">Ingresa tus credenciales para acceder a tu panel.</p>
+                    </div>
+
+                    <!-- Formulario preparado para Thymeleaf -->
+                    <!-- Al conectar al backend, puedes usar: th:action="@{/login}" th:object="${loginDto}" -->
+                    <form method="POST">
+
+                        <!-- Input: Correo Electrónico / Usuario -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-secondary small fw-semibold">Correo electrónico</label>
+                            <input type="email" class="form-control form-control-lg fs-6" id="username" name="username" required>
+                        </div>
+
+                        <!-- Input: Contraseña -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label for="password" class="form-label text-secondary small fw-semibold mb-0">Contraseña</label>
+                                <a href="#" class="text-decoration-none small">¿La olvidaste?</a>
+                            </div>
+                            <input type="password" class="form-control form-control-lg fs-6" id="password" name="password" required>
+                        </div>
+
+                        <!-- Checkbox: Recordarme -->
+                        <div class="form-check mb-4 text-start">
+                            <input class="form-check-input" type="checkbox" id="rememberMe" name="remember-me">
+                            <label class="form-check-label text-muted small" href="#rememberMe">
+                                Recordarme en este dispositivo
+                            </label>
+                        </div>
+
+                        <!-- Botón de Ingreso -->
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fs-6 fw-semibold shadow-sm mb-3">
+                            Entrar
+                        </button>
+
+                        <!-- Registro -->
+                        <div class="text-center">
+                            <span class="text-muted small">¿No tienes una cuenta? </span>
+                            <a th:href="@{/register}" class="text-decoration-none small fw-semibold">Regístrate aquí</a>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="text-center mt-5 pt-3 border-top text-muted" style="font-size: 0.8rem;">
+                    <span>Desarrollado por <strong class="text-dark">Hagy Hdez</strong> | Desarrollador Java</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
