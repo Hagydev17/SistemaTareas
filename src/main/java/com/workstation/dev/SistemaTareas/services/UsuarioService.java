@@ -1,17 +1,31 @@
 package com.workstation.dev.SistemaTareas.services;
 
 import com.workstation.dev.SistemaTareas.models.UsuarioModels;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UsuarioService {
+    private final List<UsuarioModels> usuarios = new ArrayList<>();
 
-    public List<UsuarioModels> listarUsuario() {
-        List<UsuarioModels> nuevoUsuario = new ArrayList<>();
+    public List<UsuarioModels> listarUsuarios() {
+        return listarUsuarios();
+    }
 
-        nuevoUsuario.add(new UsuarioModels(1, "Hagy dev", "hagy@email.com", "1234"));
+    public void guardarUsuario(UsuarioModels usuario) {
+        usuarios.add(usuario);
+    }
 
-        return nuevoUsuario;
+    public UsuarioModels buscarPorId(Long id) {
+        return usuarios.stream()
+                .filter(usuario -> usuario.getId().equals(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public void eliminarUsuario(Long id) {
+        usuarios.removeIf(usuario -> usuario.getId().equals(id));
     }
 }

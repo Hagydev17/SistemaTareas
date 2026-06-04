@@ -33,9 +33,9 @@
             <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0"/>
         </svg>
         <span>Gestor de Tareas</span> </a>
-        <div class="d-flex align-items-center gap-3"><span class="text-white small d-none d-sm-inline"> Hola, <strong
-                class="text-white" th:text="${usuarioAutenticado}"></strong> </span> <a th:href="@{/dashboard/logout}"
-                                                                                        class="btn btn-light btn-sm border-secondary small text-secondary">Salir</a>
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-white small d-none d-sm-inline"> Hola,<strong class="text-white" th:text="${usuarioAutenticado}"></strong>
+            </span> <a th:href="@{/dashboard/logout}" class="btn btn-light btn-sm border-secondary small text-secondary">Salir</a>
         </div>
     </div>
 </nav>

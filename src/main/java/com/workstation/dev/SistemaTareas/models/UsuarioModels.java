@@ -1,7 +1,7 @@
 package com.workstation.dev.SistemaTareas.models;
 
 public class UsuarioModels {
-    private long id;
+    private Long id;
     private String nombre;
     private String email;
     private String password;
@@ -10,18 +10,18 @@ public class UsuarioModels {
     public UsuarioModels() {
     }
 
-    public UsuarioModels(long id, String nombre, String email, String password) {
+    public UsuarioModels(Long id, String nombre, String email, String password) {
         this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.password = password;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

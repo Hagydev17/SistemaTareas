@@ -1,15 +1,25 @@
 package com.workstation.dev.SistemaTareas.models;
 
 public class TareaModels {
+    private Long id;
     private String titulo;
     private String descripcion;
 
     public TareaModels() {
     }
 
-    public TareaModels(String titulo, String descripcion) {
+    public TareaModels(Long id, String titulo, String descripcion) {
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitulo() {
